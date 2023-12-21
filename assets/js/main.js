@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
    * Scroll top button
    */
   let scrollTop = document.querySelector('.scroll-top');
-
+  
   function toggleScrollTop() {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
+
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -26,8 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  const linkWhatsapp = document.querySelector('.whatsapp');
+  // function toggleWhatssApp() {
+  //   if (linkWhatsapp) {
+  //     window.scrollY > 100 ? linkWhatsapp.classList.add('active') : linkWhatsapp.classList.remove('active');
+  //   }
+  // }
+
+  linkWhatsapp.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.open('https://api.whatsapp.com/send?phone=51961830561', "_blank");
+  });
+
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
+
+  // window.addEventListener('load', toggleWhatssApp);
+  // document.addEventListener('scroll', toggleWhatssApp);
 
   /**
    * Preloader
@@ -208,5 +225,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   window.addEventListener('load', aosInit);
+
+  // let urlWhatsappContacto = document.querySelector('.whatsapp');
+  // urlWhatsappContacto.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //     urlWhatsappContacto.Attributes["href"] = 'https://api.whatsapp.com/send?phone=51961830561';
+  // });
+
+  const enviarEmail = document.querySelector('.php-email-form');
+  // const nombre = document.querySelector('#name');
+  // const email = document.querySelector('#email');
+  // const asunto = document.querySelector('#subject');
+  // const mensaje = document.querySelector('#message');
+  const mensajeError = document.querySelector('.error-message')
+  const mensajeCorrecto = document.querySelector('.sent-message')
+  enviarEmail,addEventListener('submit', sendEmail);
+  async function sendEmail(e){
+    
+    e.preventDefault();
+    const fd = new FormData(enviarEmail);
+    console.log(fd);
+    const response = await fetch('https://formspree.io/f/xdoqngdn',{
+      method: 'POST',
+      body:fd,
+      headers:{
+        Accept: 'application/json'
+      }
+    }).catch(error => imprimirAlerta('Ocurrió algo al enviar el correo','error'));
+
+    if(response.ok){
+      enviarEmail.reset();
+      // mensajeCorrecto.classList.style('display:inline-block');
+      imprimirAlerta('Se envió correctamente','send');
+    } else {
+      imprimirAlerta('Ocurrió algo al enviar el correo','error');
+    }
+
+  }
+
+  function imprimirAlerta(mensaje, tipo){
+    console.log('hola');
+    const existeMensaje = document.querySelector('.alert');
+    if(!existeMensaje){
+      const divMensaje = document.createElement('div');
+      divMensaje.classList.add('text-center','alert','mt-4');
+
+      if(tipo === 'error'){
+          divMensaje.classList.add('alert-danger');
+      }else{
+          divMensaje.classList.add('alert-success');
+      }
+
+      divMensaje.textContent = mensaje;
+      enviarEmail.appendChild(divMensaje);
+
+      setTimeout(() => {
+          divMensaje.remove();
+      }, 2000);
+  }
+}
 
 });
