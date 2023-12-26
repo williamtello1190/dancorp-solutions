@@ -27,24 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
-  const linkWhatsapp = document.querySelector('.whatsapp');
-  // function toggleWhatssApp() {
-  //   if (linkWhatsapp) {
-  //     window.scrollY > 100 ? linkWhatsapp.classList.add('active') : linkWhatsapp.classList.remove('active');
-  //   }
-  // }
-
-  // linkWhatsapp.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //   window.open('https://api.whatsapp.com/send?phone=51961830561', "_blank");
-  // });
-
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
-
-  // window.addEventListener('load', toggleWhatssApp);
-  // document.addEventListener('scroll', toggleWhatssApp);
 
   /**
    * Preloader
@@ -166,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function initIsotopeLayout() {
     document.querySelectorAll('.isotope-layout').forEach(function(isotopeItem) {
       let layout = isotopeItem.getAttribute('data-layout') ?? 'masonry';
-      let filter = isotopeItem.getAttribute('data-default-filter') ?? '*';
+      let filter = isotopeItem.getAttribute('data-default-filter') ?? '.filter-app';
       let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
       let initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
@@ -226,17 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('load', aosInit);
 
-  // let urlWhatsappContacto = document.querySelector('.whatsapp');
-  // urlWhatsappContacto.addEventListener('click', (e) => {
-  //   e.preventDefault();
-  //     urlWhatsappContacto.Attributes["href"] = 'https://api.whatsapp.com/send?phone=51961830561';
-  // });
 
+  /*******/
   const enviarEmail = document.querySelector('.php-email-form');
-  // const nombre = document.querySelector('#name');
-  // const email = document.querySelector('#email');
-  // const asunto = document.querySelector('#subject');
-  // const mensaje = document.querySelector('#message');
   const mensajeError = document.querySelector('.error-message')
   const mensajeCorrecto = document.querySelector('.sent-message')
   enviarEmail,addEventListener('submit', sendEmail);
@@ -294,9 +270,6 @@ const select = (el, all = false) => {
   }
 }
 
- /**
-   * Hero carousel indicators
-   */
  let heroCarouselIndicators = select("#hero-carousel-indicators")
  let heroCarouselItems = select('#heroCarousel .carousel-item', true)
 
@@ -306,5 +279,10 @@ const select = (el, all = false) => {
      heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
  });
 
+//  const linkWhatsapp = document.querySelector('.whatsapp');
+//  linkWhatsapp.addEventListener('click', (e) => {
+//    e.preventDefault();
+//    window.open('https://api.whatsapp.com/send?phone=960079462&text=¡Hola! Me gustaría obtener más información, por favor.', "_blank");
+//  });
 
 });
