@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
   //   }
   // }
 
-  linkWhatsapp.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.open('https://api.whatsapp.com/send?phone=51940575298', "_blank");
-  });
+  // linkWhatsapp.addEventListener('click', (e) => {
+  //   e.preventDefault();
+  //   window.open('https://api.whatsapp.com/send?phone=51961830561', "_blank");
+  // });
 
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
