@@ -24,7 +24,7 @@
   --default-color: #212529;
   --default-color-rgb: 33, 37, 41;
   --primary-color: rgb(0, 109, 175);
-  --primary-color-rgb: 232, 69, 69;
+  --primary-color-rgb: 0, 109, 175 ;
   --secondary-color: #32353a;
   --secondary-color-rgb: 50, 53, 58;
   --contrast-color: #ffffff;
@@ -1012,7 +1012,7 @@ section {
 
 #hero .carousel-indicators li.active {
   opacity: 1;
-  background: #d9232d;
+  background: rgb(0, 109, 175);
 }
 
 #hero .btn-get-started {
@@ -2213,9 +2213,9 @@ section {
   border-radius: 4px;
 }
 
-/* .contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type=submit]:hover {
   background: rgba(var(--primary-color-rgb), 0.8);
-} */
+}
 
 @keyframes animate-loading {
   0% {
@@ -3072,8 +3072,8 @@ section {
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:30px;
-	left:40px;
+	bottom:20px;
+	left:20px;
 	background-color:#25d366;
 	color:#FFF;
 	border-radius:50px;
@@ -3099,7 +3099,8 @@ section {
 
 .pulse{
 	animation: pulse-animation 2s infinite;
-}
+} 
+/* 
 @keyframes pulse-animation{
 	0% {
 		box-shadow: 0 0 0 0px #25d3664d ;
@@ -3107,5 +3108,13 @@ section {
 	100%{
 		box-shadow: 0 0 0 15px  #bfd4c74d ;
 	}
+}  */
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0eg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
 }
-/**/
+
