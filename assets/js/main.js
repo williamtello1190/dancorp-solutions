@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const fd = new FormData(enviarEmail);
     console.log(fd);
-    const response = await fetch('https://formspree.io/f/xdoqngdn',{
+    const response = await fetch('https://formspree.io/f/moqgawdq',{
       method: 'POST',
       body:fd,
       headers:{
