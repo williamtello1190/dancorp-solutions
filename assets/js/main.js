@@ -213,8 +213,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /*******/
   const enviarEmail = document.querySelector('.php-email-form');
+
   const mensajeError = document.querySelector('.error-message')
   const mensajeCorrecto = document.querySelector('.sent-message')
+
   enviarEmail,addEventListener('submit', sendEmail);
   async function sendEmail(e){
     
@@ -232,9 +234,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if(response.ok){
       enviarEmail.reset();
       // mensajeCorrecto.classList.style('display:inline-block');
-      imprimirAlerta('Se envió correctamente','send');
+      imprimirAlerta('Su mensaje ha sido enviado. ¡Gracias!','send');
     } else {
-      imprimirAlerta('Ocurrió algo al enviar el correo','error');
+      imprimirAlerta('Ocurrió algo al enviar el email','error');
     }
 
   }

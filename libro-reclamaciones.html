@@ -43,7 +43,7 @@
   <header id="header" class="header sticky-top d-flex align-items-center">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html#hero" class="logo d-flex align-items-center me-auto me-xl-0">
+      <a href="ds.html#inicio" class="logo d-flex align-items-center me-auto me-xl-0">
         <img src="assets/img/logonodesc.png" alt="">
         <span style="color: rgb(0, 109, 175); font-size: 22px; font-weight: 700;font-family: var(--heading-font);">DANCORP</span>
         <span style="color: rgb(101, 103, 103);font-size: 22px; font-weight: 700;font-family: var(--heading-font);">SOLUTIONS</span>
@@ -54,11 +54,11 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Inicio</a></li>
-          <li><a href="index.html#about">Nosotros</a></li>
-          <li><a href="index.html#portfolio">Productos</a></li>
-          <li><a href="index.html#team">Equipo</a></li>       
-          <li><a href="index.html#contact">Contacto</a></li>
+          <li><a href="ds.html#inicio" class="active">Inicio</a></li>
+          <li><a href="ds.html#nosotros">Nosotros</a></li>
+          <li><a href="ds.html#productos">Productos</a></li>
+          <li><a href="ds.html#equipo">Equipo</a></li>       
+          <li><a href="ds.html#contacto">Contacto</a></li>
         </ul>
 
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -91,7 +91,7 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Inicio</a></li>
+            <li><a href="inicio.html">Inicio</a></li>
             <li class="current">Libro de Reclamaciones</li>
           </ol>
         </div>
@@ -146,31 +146,42 @@
                 <h4>1. Identificación del consumidor reclamante</h4>
                 <br>
                 <!-- <p>Su email no será publicado. Los campos obligatorios están marcados * </p> -->
-                <form action="">
+                <form class="php-email-form" data-aos="fade-up" data-aos-delay="200" action="">
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <input name="name" type="text" class="form-control" placeholder="Nombre completo *">
+                      <input name="NOMBRE COMPLETO" type="text" class="form-control" placeholder="Nombre completo *" required>
                     </div>
                     <div class="col-md-6 form-group">
-                      <input name="email" type="text" class="form-control" placeholder="Email *">
+                      <input name="EMAIL" type="text" class="form-control" placeholder="Email *" required>
+                    </div>
+                  </div>
+
+                  <div class="row">
+
+                    <!-- <div class="col-md-6 form-group">
+                      <input name="TIPO DE DOCUMENTO" type="text" class="form-control" placeholder="Tipo de documento *" required>
+                    </div> -->
+
+                    <div class="col-md-6 form-group">
+                    <select name="TIPO DE DOCUMENTO" type="text" class="form-select"  required>    
+                      <option value="" class="form-control"  selected >Tipo de Documento *</option>                  
+                      <option value="DNI" class="form-control"  >DNI</option>
+                      <option value="RUC" class="form-control" >RUC</option>
+                      <option value="CEX" class="form-control" >CEX</option>
+                    </select>
+                  </div>
+
+                    <div class="col-md-6 form-group">
+                      <input name="NÚMERO DE DOCUMENTO" type="text" class="form-control" placeholder="Número de documento *" required>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <input name="tipodoc" type="text" class="form-control" placeholder="Tipo de documento *">
+                      <input name="DIRECCIÓN" type="text" class="form-control" placeholder="Dirección">
                     </div>
                     <div class="col-md-6 form-group">
-                      <input name="numdoc" type="text" class="form-control" placeholder="Número de documento *">
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-6 form-group">
-                      <input name="direccion" type="text" class="form-control" placeholder="Dirección *">
-                    </div>
-                    <div class="col-md-6 form-group">
-                      <input name="telephone" type="text" class="form-control" placeholder="Teléfono *">
+                      <input name="TELÉFONO" type="text" class="form-control" placeholder="Teléfono" >
                     </div>
                   </div>
 
@@ -180,16 +191,16 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group">
-                      <input name="monto" type="text" class="form-control" placeholder="Monto reclamado S/">
+                      <input name="MONTO RECLAMADO" type="text" class="form-control" placeholder="Monto reclamado S/">
                     </div>
                     <div class="col-md-6 form-group">
-                      <input name="productocontratado" type="text" class="form-control" placeholder="Producto contratado">
+                      <input name="PRODUCTO CONTRATADO" type="text" class="form-control" placeholder="Producto contratado">
                     </div>
                   </div>                  
 
                   <div class="row">
                     <div class="col form-group">
-                      <textarea name="descripcion" class="form-control" placeholder="Descripción"></textarea>
+                      <textarea name="DESCRIPCIÓN" class="form-control" placeholder="Descripción"></textarea>
                     </div>
                   </div>
 
@@ -197,10 +208,19 @@
                   <h4>3. Detalle de la reclamación y pedido del consumidor</h4>
                   <br>
 
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col form-group" >
-                      <input name="tipoproblema" type="text" class="form-control" placeholder="Tipo de problema *">
+                      <input name="TIPO DE PROBLEMA" type="text" class="form-control" placeholder="Tipo de problema *" required>
                     </div>
+                  </div> -->
+
+                  <div class="col-md-6 form-group">
+                    <select name="TIPO DE PROBLEMA" type="text" class="form-select"  required>    
+                      <option value="" class="form-control"  selected >Tipo de Problema *</option>                  
+                      <option value="ProblemaConSuCompra" class="form-control"  >Problema con su compra</option>
+                      <option value="ProblemaConSoportePostVenta" class="form-control" >Problema con soporte post venta</option>
+                      <option value="Otros" class="form-control" >Otros</option>
+                    </select>
                   </div>
 
                   <p> <b>Problema con su compra: </b>En caso de que presente inconvenientes durante o después del proceso de compra de su producto. (Problemas con su orden de compra, con la entrega del producto, mala información u otros relacionados)</p>
@@ -210,10 +230,18 @@
 
                   <br>
 
-                  <div class="row">
+                  <!-- <div class="row">
                     <div class="col form-group" >
-                      <input name="tiporeclamo" type="text" class="form-control" placeholder="Tipo de reclamación *">
+                      <input name="TIPO DE RECLAMO" type="text" class="form-control" placeholder="Tipo de reclamación *" required>
                     </div>
+                  </div> -->
+
+                  <div class="col-md-6 form-group">
+                    <select name="TIPO DE RECLAMO" type="text" class="form-select"  required>    
+                      <option value="" class="form-control"  selected >Tipo de Reclamo *</option>                  
+                      <option value="Reclamo" class="form-control"  >Reclamo</option>
+                      <option value="Queja" class="form-control" >Queja</option>
+                    </select>
                   </div>
 
                   <p> <b>Reclamo: </b>Disconformidad relacionada a los productos.</p>
@@ -223,13 +251,13 @@
 
                   <div class="row">
                     <div class="col form-group">
-                      <textarea name="detallereclamacion" class="form-control" placeholder="Detalle de la reclamación *"></textarea>
+                      <textarea name="DETALLE RECLAMACIÓN" class="form-control" placeholder="Detalle de la reclamación *" required></textarea>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="col form-group">
-                      <textarea name="comoresolver" class="form-control" placeholder="¿Cómo desea que resolvamos su reclamo o queja?"></textarea>
+                      <textarea name="COMO PIDE RESOLVER" class="form-control" placeholder="¿Cómo desea que resolvamos su reclamo o queja?"></textarea>
                     </div>
                   </div>
 
@@ -265,7 +293,7 @@
 
     <div class="container footer-top">
       <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
+        <div class="col-lg-5 col-md-12 footer-nosotros">
           <a class="logo d-flex align-items-center">
             <span style="color: rgb(0, 109, 175)">DANCORP</span> <span style="color: rgb(101, 103, 103)">SOLUTIONS</span>
           </a>
@@ -279,7 +307,7 @@
             <a href="https://api.whatsapp.com/send?phone=960079462&text=¡Hola! Me gustaría obtener más información, por favor."  target="_blank"><i class="bi bi-whatsapp"></i></a>
             
           </div>
-          <P style="color: rgb(101, 103, 103); font-size: 10px; padding-top: 20px; margin-bottom:0;"> <b>Libro de Reclamaciones</b></P>       
+          <P style="color: rgb(101, 103, 103); font-size: 10px; padding-top: 25px; margin-bottom:0;"> <b>Libro de Reclamaciones</b></P>       
           <div >
             <a href="libro-reclamaciones.html"  target="_blank">              
            <img src="assets/img/libro-reclamaciones.png" alt="" width="100" height="45" style="margin-left: 10px;">  
@@ -290,10 +318,12 @@
         <div class="col-lg-2 col-6 footer-links">
           <h4>Enlaces</h4>
           <ul>
-            <li><a href="#">Inicio</a></li>            
-            <li><a href="index.html#about">Nosotros</a></li> 
-            <li><a href="index.html#team">Equipo</a></li>
-            <li><a href="index.html#portfolio">Productos</a></li>   
+            <li><a href="ds.html#inicio">Inicio</a></li>            
+            <li><a href="ds.html#nosotros">Nosotros</a></li> 
+            <li><a href="ds.html#productos">Productos</a></li>
+            <li><a href="ds.html#equipo">Equipo</a></li>
+            <li><a href="ds.html#contacto">Contacto</a></li>
+               
             
             
           </ul>
@@ -310,7 +340,7 @@
           </ul>
         </div>
   
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+        <div class="col-lg-3 col-md-12 footer-contacto text-center text-md-start">
           <h4>Contáctanos</h4>
           <p>Av. Gerardo Unger 1327 </p>
           <p>Urb. Los Jardines, S.M.P</p>
